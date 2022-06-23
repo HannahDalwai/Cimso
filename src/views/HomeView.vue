@@ -10,7 +10,7 @@
       </div>
   </div>
       <footer>
-        <div class="container">
+        <div id="feets" class="container">
             <div class="row align-items-start">
               <div class="col">
                   <h4>bookings</h4>    
@@ -77,8 +77,9 @@ export default {
     padding-bottom:20px;
     margin-left: 20px;
   }
-  /* li{
-  } */
+  #feets{
+    padding-top: 20px;
+  }
 
 /*------------- Footer------------ */
 footer{
