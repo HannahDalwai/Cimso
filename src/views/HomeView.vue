@@ -2,18 +2,24 @@
 <div v-if="payload">
     <div v-for="data in payload" :key="data">
       <div v-for="payload in data" :key="payload">
-            <div v-for="payloads in payload" :key="payloads">
-<div class="card" style="width: 18rem;">
-  <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body">
-                  <h5 class="card-title">Cimso</h5>
-                  <p class="card-text">             <h3> Booking Unit Id:</h3> <p> {{payloads["Booking Unit ID"]}}</p>
-                              <h3> Booking Unit Number:</h3> <p> {{payloads["Booking Unit Number"]}}</p>
-                              <h3> Booking Unit Name:</h3> <p> {{payloads["Booking Unit Name"]}}</p>
-                              <h3> Booking Unit Id:</h3> <p> {{payloads["Booking Unit ID"]}}</p></p>
+              <div class="container">
+                <div class="row">
+                  <div id=col class="col" v-for="payloads in payload" :key="payloads">
+                   <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                         <h5 class="card-title">Cimso</h5>
+                         <span class="line"></span>
+                          <div class="card-text">      
+                              <p> Booking Unit Id:</p> <p> {{payloads["Booking Unit ID"]}}</p>
+                              <p> Booking Unit Number:</p> <p> {{payloads["Booking Unit Number"]}}</p>
+                              <p> Booking Unit Name:</p> <p> {{payloads["Booking Unit Name"]}}</p>
+                              <p> Booking Unit Id:</p> <p> {{payloads["Booking Unit ID"]}}</p>
+                          </div>
+                      </div>
+                   </div>
+                  </div>
                 </div>
               </div>
-            </div>
       </div>
   </div>
       <footer>
@@ -89,6 +95,18 @@ export default {
   #feets{
     padding-top: 20px;
   }
+/*------------- Card------------ */
+#col{
+  padding-bottom:20px;
+}
+.card-title{
+  color: #2d2764;
+  font-weight:bold;
+}
+span{
+  width: 10px;
+  height:5px;
+}
 /*------------- Footer------------ */
 footer{
   background-color: #2d2764;
