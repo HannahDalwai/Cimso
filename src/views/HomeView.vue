@@ -3,9 +3,16 @@
     <div v-for="data in payload" :key="data">
       <div v-for="payload in data" :key="payload">
             <div v-for="payloads in payload" :key="payloads">
-              <ul class="list-group">
-                  <li class="list-group-item">{{payloads}}</li>
-              </ul>
+<div class="card" style="width: 18rem;">
+  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h5 class="card-title">Cimso</h5>
+                  <p class="card-text">             <h3> Booking Unit Id:</h3> <p> {{payloads["Booking Unit ID"]}}</p>
+                              <h3> Booking Unit Number:</h3> <p> {{payloads["Booking Unit Number"]}}</p>
+                              <h3> Booking Unit Name:</h3> <p> {{payloads["Booking Unit Name"]}}</p>
+                              <h3> Booking Unit Id:</h3> <p> {{payloads["Booking Unit ID"]}}</p></p>
+                </div>
+              </div>
             </div>
       </div>
   </div>
@@ -13,13 +20,22 @@
         <div id="feets" class="container">
             <div class="row align-items-start">
               <div class="col">
-                  <h4>bookings</h4>    
+                  <h4>Bookings</h4> 
+                  <p>Lorem ipsum dolor sit .</p>   
+                  <p>Lorem ipsum dolor sit .</p>   
+                  <p>Lorem ipsum dolor sit .</p>   
               </div>
               <div class="col">
-                  <h4>Services</h4>    
+                  <h4>Services</h4> 
+                  <p>Being innovative.</p>   
+                  <p>Being creative.</p>   
+                  <p>Being amazing.</p>   
               </div>
               <div class="col">
-                  <h4>Contact</h4>    
+                  <h4>Contact</h4>   
+                  <p>email@gmail.com</p>   
+                  <p>123 345 6789</p>   
+                  <p>Cape Town, South Africa</p>   
               </div>
             </div>
         </div>
@@ -56,12 +72,11 @@ export default {
   },
   
   mounted(){ 
- 
     axios.get('https://apitest.cimsoweb.com/api/innterchange/get_booking_units_request')
-    
     .then(res => {
       this.payload = res.data
-      console.log(this.payload)
+      let bookings= "Booking Unit ID"
+      console.log(this.payload["Booking Units"])
     })
     .catch(err => {
       console.error(err); 
@@ -70,22 +85,16 @@ export default {
 }
 </script>
 <style scoped>
-  
   /*------------- the rest------------ */
-  ul{
-    width: 50%;
-    padding-bottom:20px;
-    margin-left: 20px;
-  }
   #feets{
     padding-top: 20px;
   }
-
 /*------------- Footer------------ */
 footer{
   background-color: #2d2764;
   color: rgba(255, 255, 255, 0.923);
   height:200px;
+  bottom:0;
 }
 /*------------- loader------------ */
 .loader {
